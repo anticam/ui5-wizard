@@ -1,0 +1,46 @@
+<mvc:View controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    >
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <Wizard id="wizardId" complete="onWizardCompleted"> 
+                <WizardStep id="firstWizard" title="Disclaimer" validated="true">
+                    <Text text="Disclaimer text goes here."/>
+
+                </WizardStep>
+                <WizardStep id="secondWizard" title="Personal Information" validated="false" activate="secondValidation">
+                    <form:SimpleForm>
+                        <Label text="Name"/>
+                        <Input 
+                            id="nameId" 
+                            value="{/name}" 
+                            placeholder="Enter at least 6 characters"
+                            liveChange="secondValidation" />
+
+                        <Label text="Age" />
+                        <Input
+                            id="ageId"
+                            value="{/age}"
+                            placeholder="You should be at least 18 years old."
+                            liveChange="secondValidation" />
+
+                        <form:content>
+                            <Label text="First Name"/>
+                            <Input id="firstName" value="{/firstName}"/>
+                            <Label text="Last Name"/>
+                            <Input id="lastName" value="{/lastName}"/>
+                            <Label text="Email"/>
+                            <Input id="email" value="{/email}"/>
+                        </form:content>
+
+                    </form:SimpleForm>
+                    
+
+                </WizardStep>
+
+            </Wizard>
+        </content>
+    </Page>
+</mvc:View>
