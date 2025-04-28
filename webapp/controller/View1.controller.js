@@ -1,10 +1,21 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
+    "sap/ui/core/mvc/Controller",
+    "sap/m/MessageBox",
 ], (Controller) => {
     "use strict";
 
     return Controller.extend("project1.controller.View1", {
         onInit() {
+
+            var oData = {
+                user: {
+                    name: "Antika",
+                    age: "22",
+                    email: "antika@gantika.com"
+                }
+            };
+            var oModel = new sap.ui.model.json.JSONModel(oData);
+            this.getView().setModel(oModel);
         },
 
         secondValidation: function () {
@@ -18,6 +29,11 @@ sap.ui.define([
             else {
                 wizardContainer.invalidateStep(this.getView().byId("secondWizard"));
             }
+        },
+
+        onWizardCompleted: function () {
+            sap.m.MessageBox.success("Successfully submitted");
         }
+
     });
 });

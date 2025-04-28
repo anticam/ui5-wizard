@@ -5,24 +5,24 @@
     >
     <Page id="page" title="{i18n>title}">
         <content>
-            <Wizard id="wizardId" complete="onWizardCompleted"> 
+            <Wizard id="wizardId" complete="onWizardCompleted" finishButtonText="Submit"> 
                 <WizardStep id="firstWizard" title="Disclaimer" validated="true">
                     <Text text="Disclaimer text goes here."/>
-
                 </WizardStep>
+
                 <WizardStep id="secondWizard" title="Personal Information" validated="false" activate="secondValidation">
                     <form:SimpleForm>
                         <Label text="Name"/>
                         <Input 
                             id="nameId" 
-                            value="{/name}" 
+                            value="{/user/name}" 
                             placeholder="Enter at least 6 characters"
                             liveChange="secondValidation" />
 
                         <Label text="Age" />
                         <Input
                             id="ageId"
-                            value="{/age}"
+                            value="{/user/age}"
                             placeholder="You should be at least 18 years old."
                             liveChange="secondValidation" />
 
@@ -32,13 +32,37 @@
                             <Label text="Last Name"/>
                             <Input id="lastName" value="{/lastName}"/>
                             <Label text="Email"/>
-                            <Input id="email" value="{/email}"/>
+                            <Input id="email" value="{/user/email}"/>
                         </form:content>
 
                     </form:SimpleForm>
                     
 
                 </WizardStep>
+                <WizardStep id="thirdWizard" title="Optional Information" validated="true"
+                    >
+                    <form:SimpleForm>
+                        <Label text="Your bio" />
+                        <Input
+                            id="bioId"
+                            value="{/name}"
+                            placeholder="Enter your bio"
+                            liveChange="secondValidation" 
+                        />
+
+                        <Label text="Weight" />
+                        <Input
+                            id="weightId"
+                            value="{/age}"
+                            placeholder="Provider your weight."
+                        />
+                    </form:SimpleForm>
+                </WizardStep>
+
+                <WizardStep id="fourthWizard" title="Confirmation" validated="true">
+                    <Text text="Congratulations on completing the form." />
+                </WizardStep>
+
 
             </Wizard>
         </content>
