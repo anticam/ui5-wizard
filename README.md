@@ -19,8 +19,13 @@
 
 ## project1
 
-An SAP Fiori application.
+An SAP Fiori application using Wizard.
 
+  
+Youtube - [Rude Labs](https://www.youtube.com/@rudelabs) - [How to use SAP UI5 Wizard Control | SAP UI5 using BAS
+](https://www.youtube.com/watch?v=RLP07VT4hLg)
+
+SAPUI5 Samples - [Wizard branching use case](https://sapui5.hana.ondemand.com/#/entity/sap.m.Wizard/sample/sap.m.sample.WizardBranching)
 ### Starting the generated app
 
 -   This app has been generated using the SAP Fiori tools - App Generator, as part of the SAP Fiori tools suite.  In order to launch the generated app, simply run the following from the generated app root folder:
